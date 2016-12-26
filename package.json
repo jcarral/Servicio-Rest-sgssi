@@ -1,0 +1,19 @@
+{
+  "name": "seguridad-rest",
+  "version": "0.0.1",
+  "description": "Demo servicio rest seguro",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Joseba Carral <jcarraldc@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^1.0.1",
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "jwt-simple": "^0.5.1",
+    "moment": "^2.17.1",
+    "mongoose": "^4.7.4"
+  }
+}
