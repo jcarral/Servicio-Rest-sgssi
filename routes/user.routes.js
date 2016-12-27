@@ -8,7 +8,7 @@ const auth = require('./../middlewares/auth')
 router.post('/login', User.login)
 router.post('/registro', User.registro)
 
-router.post('/user', auth.validateAuth)
-//router.post('/user/add', User.addUser)
+router.post(/user/, auth.validateAuth)
+router.post('/user/secret', User.secretArea)
 
 module.exports = router

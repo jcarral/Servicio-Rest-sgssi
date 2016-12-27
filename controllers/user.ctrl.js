@@ -28,6 +28,12 @@ exports.registro = function(req, res) {
     })
 }
 
+exports.secretArea = function(req, res) {
+        return res
+            .status(200)
+            .send({message: 'Acabas de acceder al area secreta de usuario'})
+}
+
 exports.login = function(req, res) {
     User.findOne({username: req.body.username.toLowerCase()}, function(err, user) {
         if (err || user === null) return res.status(404).send()

@@ -25,12 +25,20 @@ require('./models/user.model')
 app.use('/', require('./routes/user.routes'))
 
 app.use((req, res, next) => {
+    res.statusCode = 404
+    res.send({
+        error: 'Page not found'
+    })
+})
+
+app.use((req, res, next) => {
   res.setHeader("Content-Security-Policy", "script-src 'self' https://apis.google.com")
   res.setHeader("x-xss-protection", "1; mode=block")
   res.setHeader("strict-transport-security", "max-age=31536000; includeSubDomains; preload")
   //res.setHeader("Public-Key-Pins", 'pin-sha256="<pin-value>"; max-age=<expire-time>; includeSubDomains; report-uri="<uri>"')
-  res.header("Access-Control-Allow-Origin", "*")
-  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS')
+  res.setHeader("Access-Control-Allow-Origin", "*")
+  res.setHeader('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS')
+  res.setHeader('Content-Type', 'application/json')
   return next()
 })
 //Iniciando el servidor https con el módulo de NodeJS
