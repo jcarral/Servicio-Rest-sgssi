@@ -6,6 +6,7 @@ const app = express()
 const mongoose = require('mongoose')
 
 /*
+Configuración para HTTPS
 const hskey = fs.readFileSync('server-key.pem')
 const hscert = fs.readFileSync('server-cert.pem')
 const options = {
